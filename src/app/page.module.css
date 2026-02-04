@@ -1,0 +1,197 @@
+.container {
+  min-height: 100dvh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+}
+
+.musicBtn {
+  background: #ffda6c;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-in;
+}
+
+.scene {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.fullImage {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.btn {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.popup {
+  background: white;
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.popup h2 {
+  color: #ff4d6d;
+  margin-bottom: 15px;
+}
+
+.popup p {
+  color: #555;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+/* GIFT ANIMATIONS */
+.giftBox {
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 4px solid #ffda6c;
+  margin: 20px auto;
+  max-width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.giftEmoji {
+  font-size: 60px;
+  animation: shake 0.6s infinite;
+}
+
+.tapText {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+.opened {
+  transform: scale(1.05);
+  border-color: #ff4d6d;
+}
+
+.messageCard {
+  animation: slideUp 0.8s ease forwards;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  scroll-margin-top: clamp(80px, 15vh, 180px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fromBadge {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff4d6d;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.afterText {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 15px;
+  animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+/* Gift section safe scroll */
+.giftSection {
+  scroll-margin-top: clamp(100px, 15vh, 180px);
+}
